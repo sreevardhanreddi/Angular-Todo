@@ -1,0 +1,38 @@
+<div class="container">
+
+  <hr>
+  <h1 class="text-center">A Simple ToDo App</h1>
+  <hr>
+
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="col-lg-8" style="float: none;margin: auto">
+        <div class="row">
+          <div class="col-lg-10 md-form">
+
+            <input type="text" class="form-control" (keydown.enter)="onAdd()" [(ngModel)]="items" id="AddYourToDos" placeholder="Add Todos">
+
+          </div>
+          <!-- <h4>YOU typed {{items}}</h4> -->
+          <div class="col-lg-2">
+            <button class="btn btn-default waves-effect mt-4" (click)="onAdd()">Add</button>
+          </div>
+        </div>
+
+
+
+        <br>
+        <ul class="list-group " *ngFor="let item of ToDos; let i = index">
+          <li class="hoverable mb-1 list-group-item d-flex justify-content-between align-items-center">
+            {{ item }}
+            <span class="badge badge-danger" (click)="onRemove(i)" style="cursor: pointer;">X</span>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</div>
